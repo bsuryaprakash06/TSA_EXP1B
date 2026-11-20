@@ -20,8 +20,6 @@ Most parametric time series forecasting models (such as ARMA, ARIMA, and Box-Jen
 - **Target Variable**: `Temp` (Minimum daily temperature recorded in Celsius, °C)
 - **Primary Characteristics**: Strong deterministic 365-day annual seasonality, sinusoidal temperature oscillations, and weather-driven residual shocks.
 
-*(Note: Prior documentation erroneously referenced international airline passenger data; the underlying codebase and data specifically evaluate the Melbourne daily minimum temperature records.)*
-
 ---
 
 ## Transformation Methodology & Formulas
@@ -46,16 +44,17 @@ $$z_t = \ln(1 + y_t)$$
 
 ## Results & Comparative Visualizations
 
-The transformation pipeline visualizes all five states in succession:
-1. **Original Raw Series**: Demonstrates recurring seasonal patterns and non-stationary cyclic mean.
-2. **Regular Differenced Series**: Removes baseline drift but leaves seasonal peaks intact.
-3. **Seasonal Differenced Series**: Removes annual cycles, stabilizing around zero mean.
-4. **Regular & Seasonal Differenced Series**: Fully detrended and deseasonalized stationary fluctuations.
-5. **Log Transformation**: Variance-stabilized representation.
+### 1. Original Daily Minimum Temperature
+<img width="1391" height="349" alt="Original Daily Minimum Temperature" src="https://github.com/user-attachments/assets/9a471876-df00-4ec1-bf5d-05281bef85df" />
 
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/ea1029c9-63ef-4f1d-b6c8-fceaa98a2eb2" alt="Comparative Time Series Transformation Plots" width="95%" />
-</p>
+### 2. After Regular Differencing
+<img width="1392" height="346" alt="Regular Differencing" src="https://github.com/user-attachments/assets/0b834005-9edb-45b1-8007-f7d3573de9fc" />
+
+### 3. After Seasonal Differencing (365 Days)
+<img width="1391" height="341" alt="Seasonal Adjustment" src="https://github.com/user-attachments/assets/a425013e-eefb-46a9-93b5-633f7af17d31" />
+
+### 4. Log Transformation vs. Original Temperature
+<img width="1393" height="341" alt="Log Transformation" src="https://github.com/user-attachments/assets/a6b9f08f-0cf5-4d07-9b6b-5e832486a60d" />
 
 ---
 
